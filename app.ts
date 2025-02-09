@@ -1,8 +1,7 @@
-function add(
-  input1: number | string,
-  input2: number | string,
-  resultOutput: "as-text" | "as-number"
-) {
+type Combined = number | string;
+type OutputType = "as-text" | "as-number";
+
+function add1(input1: Combined, input2: Combined, resultOutput: OutputType) {
   if (
     (typeof input1 === "number" && typeof input2 === "number") ||
     resultOutput === "as-number"
@@ -12,6 +11,6 @@ function add(
     return input1.toString() + input2.toString();
   }
 }
-add(1, 2, "as-number");
-add("1", "2", "as-number");
+add1(1, 2, "as-number");
+add1("1", "2", "as-number");
 // add("1", "2", "as-numb");// error: as-numb cannot be assigned to type as-text|as-number
